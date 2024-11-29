@@ -40,7 +40,7 @@ def hello_world():
     allTodo = Todo.query.all() 
     xy= datetime.now() 
     current_date = xy.strftime("%d-%m-%Y %H:%M:%p")
-    return render_template('index2.html', allTodo=allTodo,current_date=current_date )
+    return render_template('index.html', allTodo=allTodo,current_date=current_date )
 
 
 
@@ -68,7 +68,7 @@ def about():
    
 @app.route('/')
 def home():
-    return render_template('index2.html')
+    return render_template('index.html')
 
 
 @app.route('/show')
