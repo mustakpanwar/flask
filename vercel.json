@@ -9,8 +9,8 @@
     ],
     "routes":[
         { 
-            "src":"/",
-            "destPath":"./index.py",
+            "src":"/(.*)",
+            "destPath":"./app.py",
             "method":"GET"
            
         }
