@@ -1,0 +1,18 @@
+<h1>Welcome, {{ user.username }}!</h1>
+<a href="/logout">Logout</a>
+<h2>Your Todo List</h2>
+<form action="/add_todo" method="POST">
+    <input type="text" name="title" placeholder="Todo title" required><br>
+    <textarea name="desc" placeholder="Todo description"></textarea><br>
+    <button type="submit">Add Todo</button>
+</form>
+<ul>
+    {% for todo in todos %}
+    <li>
+        <h3>{{ todo.title }}</h3>
+        <p>{{ todo.desc }}</p>
+        <p><small>{{ todo.time }}</small></p>
+        <a href="/update_todo/{{ todo.sno }}">Update</a> | <a href="/delete_todo/{{ todo.sno }}">Delete</a>
+    </li>
+    {% endfor %}
+</ul>
