@@ -7,9 +7,9 @@ import os
 
 app = Flask(__name__)
 
-#app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///todo.db"
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', os.urandom(24))
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL','postgresql://postgres.ifhbgrmlpgiorbbiflhz:GDa5gURNcbBuyhLW@aws-0-us-east-1.pooler.supabase.com:6543/postgres?sslmode=require')
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///todo.db"
+#app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', os.urandom(24))
+#app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL','postgresql://postgres.ifhbgrmlpgiorbbiflhz:GDa5gURNcbBuyhLW@aws-0-us-east-1.pooler.supabase.com:6543/postgres?sslmode=require')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app,db)
